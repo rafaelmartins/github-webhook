@@ -124,7 +124,7 @@ func main() {
 		}
 		if !found {
 			log.Printf("request: %s: branch not allowed: %s", p.Repo.FullName, p.Branch())
-			w.WriteHeader(http.StatusBadRequest)
+			w.WriteHeader(http.StatusOK)
 			io.WriteString(w, "BRANCH_NOT_ALLOWED\n")
 			return
 		}
